@@ -69,6 +69,7 @@
             this.txtAccSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.exportAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupAccount.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -235,6 +236,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuImportAccount,
+            this.exportAccountsToolStripMenuItem,
             this.toolStripSeparator1,
             this.menuSettings,
             this.menuQuit});
@@ -431,6 +433,13 @@
             this.panelButtons.TabIndex = 14;
             this.panelButtons.SizeChanged += new System.EventHandler(this.panelButtons_SizeChanged);
             // 
+            // exportAccountsToolStripMenuItem
+            // 
+            this.exportAccountsToolStripMenuItem.Name = "exportAccountsToolStripMenuItem";
+            this.exportAccountsToolStripMenuItem.Size = new System.Drawing.Size(256, 26);
+            this.exportAccountsToolStripMenuItem.Text = "Export Accounts to JSON";
+            this.exportAccountsToolStripMenuItem.Click += new System.EventHandler(this.exportAccountsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnCopy;
@@ -512,6 +521,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Panel panelButtons;
+        private System.Windows.Forms.ToolStripMenuItem exportAccountsToolStripMenuItem;
     }
 }
 

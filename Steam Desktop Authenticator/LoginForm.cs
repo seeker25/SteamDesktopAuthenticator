@@ -195,6 +195,7 @@ namespace Steam_Desktop_Authenticator
                 }
             }
 
+            linker.LinkedAccount.Password = password;
             //Save the file immediately; losing this would be bad.
             if (!manifest.SaveAccount(linker.LinkedAccount, passKey != null, passKey))
             {

@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using System.Threading;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 
 namespace Steam_Desktop_Authenticator
 {
@@ -743,6 +744,17 @@ namespace Steam_Desktop_Authenticator
                 but.Location = curPos;
                 curPos = new Point(curPos.X + but.Width, 0);
             }
+        }
+
+        private void exportAccountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dynamic accountsExport = allAccounts.ToList().Select(s =>
+            {
+                return new { user = s.AccountName, passwd = s.Password, secret = s.SharedSecret };
+            });
+            dynamic accountFile = new { accounts = accountsExport };
+
+            File.WriteAllText(@"c:\Users\David\Desktop\tsc-3\accountsexample.json", JsonConvert.SerializeObject(accountFile, Formatting.Indented));
         }
     }
 }
